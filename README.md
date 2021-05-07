@@ -52,7 +52,9 @@
        wmic process where processid=[pid] get parentprocessid
        wmic process where processid=[pid] get commandline
        pslist
-                   
+   
+   
+   
    <p><b><a href="#table-of-contents">↑</a> User Logon info</b></p>    
    
        qwinsta
@@ -68,7 +70,14 @@
        net localgroup administrators
        wmic useraccount get name, SID
        wmic useraccount list
-              
+  
+  <p><b><a href="#table-of-contents">↑</a> Services</b></p>   
+      
+      wmic service list full
+      net start
+      sc query
+      psservice
+                
   </a><h3><a href="#table-of-contents">↑</a> Linux Cheat Sheet</h3>
 
 
