@@ -16,27 +16,27 @@
    </a><a href="#table-of-contents">↑</a> Windows Cheat Sheet</h3>
                                <h5>Gather System Information</h5>
                            
-                           <p> get-computerinfo</p>
-                           <p> echo %DATE% %TIME% </p>
-                           <p> date</p>
-                           <p>time</p>
-                           <p>reg query "HKLM\System\CurrentControlSet\Control\TimeZoneInformation"</p>
-                           <p>systeminfo</p>
-                           <p>wmic computersystem list full</p>
-                           <p>wmic /node:localhost product list full /format:csv</p>
-                           <p>wmic softwarefeature get name,version /format:csv</p>
-                           <p>wmic softwareelement get name,version /format:csv</p>
-                           <p>reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /s</p>
-                           <p>echo %PATH%</p>
-                           <p>wmic bootconfig get /all /format:List</p>
-                           <p>wmic computersystem get name, domain, manufacturer, model, numberofprocessors,primaryownername,username,roles,totalphysicalmemory /format:list</p>
-                           <p>wmic timezone get Caption, Bias, DaylightBias, DaylightName, StandardName</p>
-                           <p>wmic recoveros get /all /format:List</p>
-                           <p>wmic os get /all /format:list</p>
-                           <p>wmic partition get /all /format:list</p>
-                           <p>wmic logicaldisk get /all /format:list</p>
-                           <p>wmic diskdrive get /all /format:list</p>
-                           <p>fsutil fsinfo drives</p>
+       get-computerinfo
+       echo %DATE% %TIME% 
+       date
+       time
+       reg query "HKLM\System\CurrentControlSet\Control\TimeZoneInformation"
+       systeminfo
+       wmic computersystem list full
+       wmic /node:localhost product list full /format:csv
+       wmic softwarefeature get name,version /format:csv
+       wmic softwareelement get name,version /format:csv
+       reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /s
+       echo %PATH%
+       wmic bootconfig get /all /format:List
+       wmic computersystem get name, domain, manufacturer, model, numberofprocessors,primaryownername,username,roles,totalphysicalmemory /format:list
+       wmic timezone get Caption, Bias, DaylightBias, DaylightName, StandardName
+       wmic recoveros get /all /format:List
+       wmic os get /all /format:list
+       wmic partition get /all /format:list
+       wmic logicaldisk get /all /format:list
+       wmic diskdrive get /all /format:list
+       fsutil fsinfo drives
  <h3>Linux Cheat Sheet</h3>
 
 
