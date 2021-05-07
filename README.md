@@ -39,16 +39,22 @@
        wmic logicaldisk get /all /format:list
        wmic diskdrive get /all /format:list
        fsutil fsinfo drives
+       
+   <p><b><a href="#table-of-contents">↑</a> User Logon info</b></p>    
+   
+       qwinsta
+       query user
+       
    <p><b><a href="#table-of-contents">↑</a> Gather User Information</b></p>
         
-         whoami
-         whoami /priv
-         whoami /user
-         net users
-         net localgroup
-         net localgroup administrators
-         wmic useraccount get name, SID
-         wmic useraccount list
+       whoami
+       whoami /priv
+       whoami /user
+       net users
+       net localgroup
+       net localgroup administrators
+       wmic useraccount get name, SID
+       wmic useraccount list
               
   </a><h3><a href="#table-of-contents">↑</a> Linux Cheat Sheet</h3>
 
