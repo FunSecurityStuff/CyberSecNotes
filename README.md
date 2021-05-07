@@ -16,8 +16,7 @@
    <h3><a href="#table-of-contents">↑</a> Windows Cheat Sheet</h3>
  
   <p> <h3><a href="#table-of-contents">↑</a> Triage on a live system</h3></p>
-   <p><b><a href="#table-of-contents">↑</a> Gather System Information</b></p>
-                           
+   <p><b><a href="#table-of-contents">↑</a> Gather System Information</b></p>                       
        get-computerinfo
        echo %DATE% %TIME% 
        date
@@ -39,14 +38,21 @@
        wmic logicaldisk get /all /format:list
        wmic diskdrive get /all /format:list
        fsutil fsinfo drives
+    
+   <p><b><a href="#table-of-contents">↑</a> Process Info</b></p>   
        
+       Get-CimInstance Win32_StartupCommand | Select-Object Name, command, Location, User | FL
+       wmic startup list full
+        
+      
+                   
    <p><b><a href="#table-of-contents">↑</a> User Logon info</b></p>    
    
        qwinsta
        query user
        
-   <p><b><a href="#table-of-contents">↑</a> Gather User Information</b></p>
-        
+   <p><b><a href="#table-of-contents">↑</a> Gather User Information</b></p>   
+   
        whoami
        whoami /priv
        whoami /user
