@@ -1,4 +1,4 @@
-# CyberSecNotes
+
 <html>
   <head>
  <div data-target="readme-toc.content" class="Box-body px-5 pb-5">
@@ -16,5 +16,4 @@
 <li><a href="#-miscellaneous">Miscellaneous</a></li>
 </ul>
             
-            </head>
-            </html>
+            <
