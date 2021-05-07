@@ -16,7 +16,8 @@
    <h3><a href="#table-of-contents">↑</a> Windows Cheat Sheet</h3>
  
   <p> <h3><a href="#table-of-contents">↑</a> Triage on a live system</h3></p>
-   <p><b><a href="#table-of-contents">↑</a> Gather System Information</b></p>                       
+   <p><b><a href="#table-of-contents">↑</a> Gather System Information</b></p>   
+   
        get-computerinfo
        echo %DATE% %TIME% 
        date
