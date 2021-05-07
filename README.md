@@ -15,7 +15,7 @@
 
    <h3><a href="#table-of-contents">↑</a> Windows Cheat Sheet</h3>
  
-  <p> <h4><a href="#table-of-contents">↑</a> Triage on a live system</h4></p>
+  <p> <h3><a href="#table-of-contents">↑</a> Triage on a live system</h3></p>
    <p><b><a href="#table-of-contents">↑</a> Gather System Information</b></p>
                            
        get-computerinfo
@@ -39,6 +39,17 @@
        wmic logicaldisk get /all /format:list
        wmic diskdrive get /all /format:list
        fsutil fsinfo drives
+   <p><b><a href="#table-of-contents">↑</a> Gather User Information</b></p>
+        
+         whoami
+         whoami /priv
+         whoami /user
+         net users
+         net localgroup
+         net localgroup administrators
+         wmic useraccount get name, SID
+         wmic useraccount list
+              
   </a><h3><a href="#table-of-contents">↑</a> Linux Cheat Sheet</h3>
 
 
