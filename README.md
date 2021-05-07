@@ -15,7 +15,7 @@
 
    <h3><a href="#table-of-contents">↑</a> Windows Cheat Sheet</h3>
  
-   <h4><a href="#table-of-contents">↑</a> Triage on a live system</h4>
+  <p> <h4><a href="#table-of-contents">↑</a> Triage on a live system</h4></p>
    <p><b><a href="#table-of-contents">↑</a> Gather System Information</b></p>
                            
        get-computerinfo
