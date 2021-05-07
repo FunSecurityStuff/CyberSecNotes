@@ -15,7 +15,7 @@
 
    </a><a href="#table-of-contents">↑</a> Windows Cheat Sheet</h3>
    <a href="#table-of-contents">↑</a><h4>Live Response</h4>
-   <a href="#table-of-contents">↑</a><h5>Gather System Information</h5>
+   <a href="#table-of-contents">↑</a>Gather System Information</h5>
                            
        get-computerinfo
        echo %DATE% %TIME% 
