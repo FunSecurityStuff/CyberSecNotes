@@ -44,8 +44,14 @@
        
        Get-CimInstance Win32_StartupCommand | Select-Object Name, command, Location, User | FL
        wmic startup list full
-        
-      
+       tasklist
+       wmic process list full /format:csv
+       wmic process get name,commandline, parentprocessid,processid /format:csv
+       wmic process get ExecutablePath,processid /format:csv
+       wmic process get name,ExecutablePath,processid,parentprocessid /format:csv | findstr /I "appdata"
+       wmic process where processid=[pid] get parentprocessid
+       wmic process where processid=[pid] get commandline
+       pslist
                    
    <p><b><a href="#table-of-contents">↑</a> User Logon info</b></p>    
    
