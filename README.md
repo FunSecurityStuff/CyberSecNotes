@@ -14,30 +14,29 @@
  <h2><a id="user-content--datasets" class="anchor" aria-hidden="true" href="#-BlueTeam"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a><a href="#table-of-contents">↑</a> Blue Team Resources</h2>
 
    </a><a href="#table-of-contents">↑</a> Windows Cheat Sheet</h3>
-                                                     <h5>Gather System Information</h5>
-                                                 <p> get-computerinfo</p>
-                                <p> echo %DATE% %TIME% </p>
-                                 <p> date /t</p>
-time /t
-reg query "HKLM\System\CurrentControlSet\Control\TimeZoneInformation"
-systeminfo
-wmic computersystem list full
-wmic /node:localhost product list full /format:csv
-wmic softwarefeature get name,version /format:csv
-wmic softwareelement get name,version /format:csv
-reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /s
-echo %PATH%
-(gci env:path|Select -exp Value).split(';')
-SET
-wmic bootconfig get /all /format:List
-wmic computersystem get name, domain, manufacturer, model, numberofprocessors,primaryownername,username,roles,totalphysicalmemory /format:list
-wmic timezone get Caption, Bias, DaylightBias, DaylightName, StandardName
-wmic recoveros get /all /format:List
-wmic os get /all /format:list
-wmic partition get /all /format:list
-wmic logicaldisk get /all /format:list
-wmic diskdrive get /all /format:list
-fsutil fsinfo drives</p>
+                               <h5>Gather System Information</h5>
+                           
+                           <p> get-computerinfo</p>
+                           <p> echo %DATE% %TIME% </p>
+                           <p> date</p>
+                           <p>time</p>
+                           <p>reg query "HKLM\System\CurrentControlSet\Control\TimeZoneInformation"</p>
+                           <p>systeminfo</p>
+                           <p>wmic computersystem list full</p>
+                           <p>wmic /node:localhost product list full /format:csv</p>
+                           <p>wmic softwarefeature get name,version /format:csv</p>
+                           <p>wmic softwareelement get name,version /format:csv</p>
+                           <p>reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /s</p>
+                           <p>echo %PATH%</p>
+                           <p>wmic bootconfig get /all /format:List</p>
+                           <p>wmic computersystem get name, domain, manufacturer, model, numberofprocessors,primaryownername,username,roles,totalphysicalmemory /format:list</p>
+                           <p>wmic timezone get Caption, Bias, DaylightBias, DaylightName, StandardName</p>
+                           <p>wmic recoveros get /all /format:List</p>
+                           <p>wmic os get /all /format:list</p>
+                           <p>wmic partition get /all /format:list</p>
+                           <p>wmic logicaldisk get /all /format:list</p>
+                           <p>wmic diskdrive get /all /format:list</p>
+                           <p>fsutil fsinfo drives</p>
  <h3>Linux Cheat Sheet</h3>
 
 
