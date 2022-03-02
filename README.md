@@ -158,6 +158,41 @@
   <p><b><a href="#table-of-contents">↑</a>Search files recursively in directory for keyword</b></p>
     
     grep -H -i -r "password" /
+    
+  <p><b><a href="#table-of-contents">↑</a>Process Tree</b></p>
+  
+    ps -auxwf
+  
+  <p><b><a href="#table-of-contents">↑</a>Open Files and space usage</b></p>
+  
+   lsof
+   du
+   
+ <p><b><a href="#table-of-contents">↑</a>Detailed Process Information</b></p>
+  
+  ls -al /proc/[PID]
+  
+ <p><b><a href="#table-of-contents">↑</a>SUID/SGID and Sticky Bit Special Permissions</b></p>
+ 
+  find / -type f \( -perm -04000 -o -perm -02000 \) -exec ls -lg {} \;
+
+ <p><b><a href="#table-of-contents">↑</a>Persistent Areas of Interest</b></p>
+ 
+  /etc/rc.local
+  /etc/initd
+  /etc/rc*.d
+  /etc/modules
+  /etc/cron*
+  /var/spool/cron/*
+  /usr/lib/cron/
+  /usr/lib/cron/tabs
+
+
+
+
+    
+  
+    
 
 
 
