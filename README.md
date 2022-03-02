@@ -84,7 +84,7 @@
       
      getent passwd
      
-      <p><b><a href="#table-of-contents">↑</a> Lock a user account</b></p>   
+ <p><b><a href="#table-of-contents">↑</a> Lock a user account</b></p>   
       usermod -L <user>
 
 
