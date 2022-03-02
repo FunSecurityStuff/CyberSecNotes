@@ -139,6 +139,26 @@
     ls -larth /etc/cron*
     
     ls /var/spool/cron/*
+    
+  <p><b><a href="#table-of-contents">↑</a>SSH Keys and Authorised Users</b></p>
+  
+    cat /etc/ssh/sshd_config
+    
+    ls /home/*/.ssh/*
+
+    cat /home/*/.ssh/id_rsa.pub
+
+    cat /home/*/.ssh/authorized_keys
+    
+    
+  <p><b><a href="#table-of-contents">↑</a>Sudoers File (who who can run commands as a different user)</b></p>
+    
+    cat /etc/sudoers
+
+  <p><b><a href="#table-of-contents">↑</a>Search files recursively in directory for keyword</b></p>
+    
+    grep -H -i -r "password" /
+
 
 
     
