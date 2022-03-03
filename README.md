@@ -79,19 +79,23 @@
       psservice
       
   <p><b><a href="#table-of-contents">↑</a> Show processes with networking functions</b></p>   
+      
       tasklist /m WSock32.dll
       tasklist /m Ws2_32.dll
       tasklist /m Wininet.dll
       tasklist /m winhttp.dll
 
   <p><b><a href="#table-of-contents">↑</a>Show processes importing the Remote Access API</b></p>   
+      
       tasklist /m RASAPI32.dll
 
   <p><b><a href="#table-of-contents">↑</a>Show processes importing the task scheduler API</b></p>   
+      
       tasklist /m taskschd.dll
       tasklist /m mstask.dll
       
   <p><b><a href="#table-of-contents">↑</a>Show processes importing the Windows Media Instrumentation API</b></p>
+      
       tasklist /m wbem*
       tasklist /m wmi*
 
