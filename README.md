@@ -14,11 +14,48 @@
  <h2><a id="user-content--datasets" class="anchor" aria-hidden="true" href="#-BlueTeam"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a><a href="#table-of-contents">↑</a> Blue Team Resources</h2>
 
   <H3> <p><b><a href="#table-of-contents">↑</a>CrowdStrike Threat Hunting Queries</b></p></h3>
-| FirstName     | LastName      | City        |
-| ------------- | ------------- | --------    |
-| `John`        | Test1         | `NewYork`   |
-| `Bob`         | Test2         | `Toronto`   |
+<table>
+    <tr>
+      <td><b>Description</b></td>
+      <td><b>Query</b></td></tr>
+      <tr>
+      <td>Commands run under psexec or psexecsv</td>
+       <td> event_simpleName=ProcessRollup2 psexec OR psexecsv OR [search psexec OR psexecsv event_simpleName=processRollup2 | fields + TargetProcessId_decimal | rename TargetProcessId_decimal as ParentProcessId]
+</tr>
+<tr>
+  <td>Network connections made from a file</td>
+  <td>event_simpleName=NetworkConnectIP4 ComputerName=[ComputerName]
+	|rename ContextProcessId_decimal as TargetProcessId_decimal
+	|join TargetProcessId_decimal
+	[ search event_simpleName=*ProcessRollup* ComputerName=[ComputerName] FileName=[FileName]]
+	| stats values(RemoteIP) values(RemotePort_decimal) values(ImageFileName) values(FileName) values(CommandLine) values(UserName) by SHA256HashData</tr>   
     
+<tr>
+  <td>DNSRequest made from a file</td>
+  <td> event_simpleName=DnsRequest ComputerName=[ComputerName]
+	|rename ContextProcessId_decimal as TargetProcessId_decimal
+	|join TargetProcessId_decimal
+	[ search event_simpleName=*ProcessRollup* ComputerName=[ComputerName] FileName=[FileName]]
+    | stats count by _time DomainName ComputerName CommandLine FileName UserName</td>
+  </tr>
+<tr>
+  <td> Query to check if there were logins from the compromised system </td>
+   <td>event_simpleName=UserLogon RemoteIP=[IPofCompromisedSystem]
+| eval ProductTypeName=case(ProductType=1, "Workstation", ProductType=2, "Domain Controller", ProductType=3, "Server") 
+| eval LogonType=case(LogonType_decimal="2", "Local Logon", LogonType_decimal="3", "Network", LogonType_decimal="4", "Batch", LogonType_decimal="5", "Service", LogonType_decimal="6", "Proxy", LogonType_decimal="7", "Unlock", LogonType_decimal="8", "Network Cleartext", LogonType_decimal="9", "New Credentials", LogonType_decimal="10", "RDP", LogonType_decimal="11", "Cached Credentials", LogonType_decimal="12", "Auditing", LogonType_decimal="13", "Unlock Workstation")
+|table ProductTypeName LogonType _time UserName ClientComputerName ComputerName LocalAddressIP4 RemoteIP UserIsAdmin_decimal UserPrincipal</td>
+  </tr>
+<tr>
+  <td>Check for files opened from outlook</td>
+  <td> event_simpleName=*ProcessRollup* ParentBaseFileName=Outlook.exe ComputerName=[ComputerName] OR UserName=[UserName]
+    | table _time CommandLine FileName FilePath UserName</td>
+
+  </tr>
+<tr>
+<td>
+<td>
+  </tr>
+  </table>
   
    <h3><a href="#table-of-contents">↑</a> Windows Cheat Sheet</h3>
  
